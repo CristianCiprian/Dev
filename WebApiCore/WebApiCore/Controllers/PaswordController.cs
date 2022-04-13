@@ -10,7 +10,7 @@ using WebApiCore.Framework;
 namespace WebApiCore.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("/API")]
     public class PaswordController : BaseController
     {
         private readonly IPaswordService paswordService;
@@ -32,7 +32,23 @@ namespace WebApiCore.Controllers
             catch (Exception ex)
             {
                 return CreateUnexpectedErrorResponse(ex);
-                
+            }
+
+        }
+
+        [Route("Welcome")]
+        [HttpGet]
+        public virtual async Task<IActionResult> GetWelcome()
+        {
+            try
+            {
+                string message = "Welcome to Cristian Api!";
+                return new ObjectResult(message);
+            }
+            catch (Exception ex)
+            {
+                return CreateUnexpectedErrorResponse(ex);
+
             }
 
         }

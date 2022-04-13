@@ -96,6 +96,13 @@ using PaswordGenerate.Web.Services;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 5 "C:\Users\crist\Desktop\Jobs\WebApiCore\PaswordGenerate.Web\Pages\Index.razor"
+using System.Timers;
+
+#line default
+#line hidden
+#nullable disable
     [Microsoft.AspNetCore.Components.RouteAttribute("/")]
     public partial class Index : Microsoft.AspNetCore.Components.ComponentBase
     {
@@ -105,25 +112,49 @@ using PaswordGenerate.Web.Services;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 42 "C:\Users\crist\Desktop\Jobs\WebApiCore\PaswordGenerate.Web\Pages\Index.razor"
+#line 36 "C:\Users\crist\Desktop\Jobs\WebApiCore\PaswordGenerate.Web\Pages\Index.razor"
       
     [Parameter] public User User { get; set; }
-    string DateTimeUser = "";
-    string UserId = "";
-    DateTime model = DateTime.MinValue;
-
+        
+    private string UserId = "";
+    private DateTime DateTimeUser = DateTime.Now;
+    private Timer timer;
+    private int dateTimeValue = 30;    
     private string  password = string.Empty;
     private PaswordResponse paswordResponse = new PaswordResponse();
 
     private async Task PasswordGenerate()
     {
+
         User = new User();
-        User.DateTimeUser = model;
-        //User.UserId = UserId.Cast(Int32); 
-        //await base.OnInitializedAsync();        
+        User.DateTimeUser = DateTimeUser;
+               
         paswordResponse = await _paswordServices.GetPaswordResponses(UserId);
-        password = paswordResponse.Pasword; 
+        password = paswordResponse.Pasword;
+
+        //Timer Countdown
+        timer = new Timer();
+        timer.Interval = 1000;
+        timer.Elapsed += OnTimeElapsed;
+        timer.Enabled = true;
     }
+
+    private void OnTimeElapsed(object? sender, ElapsedEventArgs e)
+    {
+        if(dateTimeValue>0){  
+            dateTimeValue = dateTimeValue -1;
+            InvokeAsync(() =>
+                {
+                    StateHasChanged();
+                });
+        }
+        else
+        {
+            timer.Enabled = false;
+            dateTimeValue = 30;
+        }       
+    }
+   
 
 #line default
 #line hidden

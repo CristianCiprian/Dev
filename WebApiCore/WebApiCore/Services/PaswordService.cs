@@ -5,7 +5,7 @@ using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
-using WebApiCore.Cash;
+using WebApiCore.Cache;
 using WebApiCore.Framework;
 using WebApiCore.Helpers;
 
@@ -39,7 +39,7 @@ namespace WebApiCore.Services
             paswordRespons.DateTimePaswordEnded = DateTime.Now.AddSeconds(30).ToString("yyyy/MM/dd - HH:mm:ss", System.Globalization.CultureInfo.GetCultureInfo("en-US"));
 
             //await savePassword()
-             CashForPassword.Instance.PaswordResponses.Add(paswordRespons);
+             CacheForPassword.Instance.PaswordResponses.Add(paswordRespons);
                         
             return paswordRespons;
         }

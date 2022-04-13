@@ -30,11 +30,7 @@ namespace PaswordGenerate.Web
             services.AddRazorPages();
             services.AddServerSideBlazor();
             services.AddSingleton<WeatherForecastService>();
-            services.AddHttpClient<IPaswordServices, PaswordServices>
-                (client =>
-                {
-                    client.BaseAddress = new Uri("http://localhost:5001/");
-                });
+            services.AddTransient<IPaswordServices, PaswordServices>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

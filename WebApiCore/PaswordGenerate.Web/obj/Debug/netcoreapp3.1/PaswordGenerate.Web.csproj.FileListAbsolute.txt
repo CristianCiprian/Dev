@@ -47,3 +47,4 @@ C:\Users\crist\Desktop\Jobs\WebApiCore\PaswordGenerate.Web\bin\Debug\netcoreapp3
 C:\Users\crist\Desktop\Jobs\WebApiCore\PaswordGenerate.Web\bin\Debug\netcoreapp3.1\System.Text.Json.dll
 C:\Users\crist\Desktop\Jobs\WebApiCore\PaswordGenerate.Web\bin\Debug\netcoreapp3.1\PaswordGenerate.DataModels.dll
 C:\Users\crist\Desktop\Jobs\WebApiCore\PaswordGenerate.Web\bin\Debug\netcoreapp3.1\PaswordGenerate.DataModels.pdb
+C:\Users\crist\Desktop\Jobs\WebApiCore\PaswordGenerate.Web\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll

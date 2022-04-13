@@ -14,7 +14,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Reflection;
 using System.Threading.Tasks;
-using WebApiCore.Cash;
+using WebApiCore.Cache;
 using WebApiCore.Framework;
 using WebApiCore.Services;
 

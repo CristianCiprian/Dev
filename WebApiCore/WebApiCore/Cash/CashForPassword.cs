@@ -2,23 +2,23 @@
 using System;
 using System.Collections.Generic;
 
-namespace WebApiCore.Cash
+namespace WebApiCore.Cache
 {
-    public sealed class CashForPassword
+    public sealed class CacheForPassword
     {
-        private CashForPassword()
+        private CacheForPassword()
         {
 
         }
 
-        private static CashForPassword instance = null;
-        public static CashForPassword Instance
+        private static CacheForPassword instance = null;
+        public static CacheForPassword Instance
         {
             get
             {
                 if (instance == null)
                 {
-                    instance = new CashForPassword();
+                    instance = new CacheForPassword();
                 }
                 return instance;
             }

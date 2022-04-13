@@ -1,0 +1,60 @@
+﻿@page "/"
+@using PasswordGenerate.DataModels
+@using PaswordGenerate.DataModels
+@using PaswordGenerate.Web.Services
+@inject IPaswordServices _paswordServices
+
+<PageTitle>Index</PageTitle>
+
+<h3>Generare parola</h3>
+
+Introduceti id-ul user-ului si data!
+ <hr/>  
+        <div class = "form-field">
+            <label> Id-ul userului: </label>
+            <div>
+           <EditForm Model="UserId">
+                <input class = "form-control" @bind-value="UserId" />
+            </EditForm>
+            @*<ValidationMessage For = "@(() => User.UserId)"/>*@
+            </div>
+        </div>
+ <br/> 
+         <div class = "form-field">
+            <label> Data: </label>
+            <div>
+            <EditForm Model="DateTimeUser">
+                <input class = "form-control" @bind-value="DateTimeUser" />
+            </EditForm>
+            @*<ValidationMessage For = "@(() => User.DateTimeUser)"/>*@
+            </div>
+        </div>
+ <hr/> 
+
+  <EditForm Model="model">
+      <InputDate class="form-text" @bind-Value="model"></InputDate>
+  </EditForm>
+
+<p role="status">Parola generata: @password</p>
+
+<button class="btn btn-primary" @onclick="PasswordGenerate">Genereaza parola</button>
+
+@code{
+    [Parameter] public User User { get; set; }
+    string DateTimeUser = "";
+    string UserId = "";
+    DateTime model = DateTime.MinValue;
+
+    private string  password = string.Empty;
+    private PaswordResponse paswordResponse = new PaswordResponse();
+
+    private async Task PasswordGenerate()
+    {
+        User = new User();
+        User.DateTimeUser = model;
+        //User.UserId = UserId.Cast(Int32); 
+        //await base.OnInitializedAsync();        
+        paswordResponse = await _paswordServices.GetPaswordResponses(UserId);
+        password = paswordResponse.Pasword; 
+    }
+}

@@ -1,0 +1,94 @@
+﻿@page "/"
+@using PasswordGenerate.DataModels
+@using PaswordGenerate.DataModels
+@using PaswordGenerate.Web.Services
+@using System.Timers;
+@inject IPasswordServices _passwordServices
+
+<h3>Generare parola</h3>
+
+Introduceti id-ul user-ului si data!
+ <hr/>  
+        <div class = "form-field">            
+           <EditForm Model="UserId">
+               <label> Id-ul userului: </label>
+                <input class = "form-text" @bind-value="UserId"/>
+            </EditForm>            
+        </div>
+ <br/> 
+         <div class = "form-field">                              
+            <EditForm Model="DateTimeUser">
+                <label> Data: </label>  
+                <InputDate class="form-text" @bind-Value="DateTimeUser"></InputDate>
+            </EditForm> 
+        </div>
+ <hr/> 
+ 
+  <div class = "form-field">
+        <p role="status">Parola generata: @password</p>
+        <label> Valabilitate in secunde: </label>
+        <span style ="color:red; font-weight:700">@dateTimeValue.ToString()</span>
+ </div>
+
+<hr/>
+    <button class="btn btn-primary" @onclick="PasswordGenerate">Genereaza parola</button>
+
+@code{
+    [Parameter] public User User { get; set; }
+
+    private string UserId = "";
+    private DateTime DateTimeUser = DateTime.Now;
+    private Timer timer;
+    private int dateTimeValue = 30;    
+    private string  password = string.Empty;
+    private PasswordResponse passwordResponse = new PasswordResponse();
+    private string validPassword = string.Empty;
+    private int isValidPassword;
+
+    private async Task PasswordGenerate()
+    {
+
+        User = new User();
+        User.DateTimeUser = DateTimeUser;
+
+        passwordResponse = await _passwordServices.GetPasswordResponses(UserId);
+        password = passwordResponse.Password;
+
+        //Timer Countdown
+        timer = new Timer();
+        timer.Interval = 1000;
+        timer.Elapsed += OnTimeElapsed;
+        timer.Enabled = true;
+    }
+
+    private void OnTimeElapsed(object? sender, ElapsedEventArgs e)
+    {
+        if(dateTimeValue>0){  
+            dateTimeValue = dateTimeValue -1;
+            InvokeAsync(() =>
+                {
+                    StateHasChanged();
+                });
+        }
+        else
+        {
+            timer.Enabled = false;
+            dateTimeValue = 30;
+        }       
+    }
+
+    private async Task CheckPassword()
+    {   
+        isValidPassword =  await _passwordServices.CheckPassword(password);
+
+        if (isValidPassword > 0)
+        {
+            validPassword = "parola valida";
+        }
+        else
+        {
+            validPassword = "parola expirata";
+        }
+    }
+   
+}

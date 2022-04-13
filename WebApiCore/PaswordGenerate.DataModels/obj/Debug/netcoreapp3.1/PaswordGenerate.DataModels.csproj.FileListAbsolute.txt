@@ -1,0 +1,10 @@
+C:\Users\crist\Desktop\Jobs\WebApiCore\PaswordGenerate.DataModels\obj\Debug\netcoreapp3.1\PaswordGenerate.DataModels.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\crist\Desktop\Jobs\WebApiCore\PaswordGenerate.DataModels\obj\Debug\netcoreapp3.1\PaswordGenerate.DataModels.AssemblyInfoInputs.cache
+C:\Users\crist\Desktop\Jobs\WebApiCore\PaswordGenerate.DataModels\obj\Debug\netcoreapp3.1\PaswordGenerate.DataModels.AssemblyInfo.cs
+C:\Users\crist\Desktop\Jobs\WebApiCore\PaswordGenerate.DataModels\obj\Debug\netcoreapp3.1\PaswordGenerate.DataModels.csproj.CoreCompileInputs.cache
+C:\Users\crist\Desktop\Jobs\WebApiCore\PaswordGenerate.DataModels\bin\Debug\netcoreapp3.1\PaswordGenerate.DataModels.deps.json
+C:\Users\crist\Desktop\Jobs\WebApiCore\PaswordGenerate.DataModels\bin\Debug\netcoreapp3.1\PaswordGenerate.DataModels.dll
+C:\Users\crist\Desktop\Jobs\WebApiCore\PaswordGenerate.DataModels\bin\Debug\netcoreapp3.1\PaswordGenerate.DataModels.pdb
+C:\Users\crist\Desktop\Jobs\WebApiCore\PaswordGenerate.DataModels\obj\Debug\netcoreapp3.1\PaswordGenerate.DataModels.dll
+C:\Users\crist\Desktop\Jobs\WebApiCore\PaswordGenerate.DataModels\obj\Debug\netcoreapp3.1\PaswordGenerate.DataModels.pdb
+C:\Users\crist\Desktop\Jobs\WebApiCore\PaswordGenerate.DataModels\obj\Debug\netcoreapp3.1\PaswordGenerate.DataModels.csproj.AssemblyReference.cache

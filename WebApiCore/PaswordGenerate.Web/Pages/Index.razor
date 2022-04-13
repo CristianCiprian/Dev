@@ -26,12 +26,17 @@ Introduceti id-ul user-ului si data!
  
   <div class = "form-field">
         <p role="status">Parola generata: @password</p>
-        <label> Valabilitate in secunde: </label>
+        <label> Valabilitate: </label>
         <span style ="color:red; font-weight:700">@dateTimeValue.ToString()</span>
+        <label> secunde </label>
+        <br />
+        <span style ="color:red; font-weight:700">@validPassword</span>
  </div>
 
 <hr/>
     <button class="btn btn-primary" @onclick="PasswordGenerate">Genereaza parola</button>
+
+    <button class="btn btn-primary" @onclick="CheckPassword">Testeaza parola</button>
 
 @code{
     [Parameter] public User User { get; set; }
@@ -39,7 +44,7 @@ Introduceti id-ul user-ului si data!
     private string UserId = "";
     private DateTime DateTimeUser = DateTime.Now;
     private Timer timer;
-    private int dateTimeValue = 30;    
+    private int dateTimeValue = 0;    
     private string  password = string.Empty;
     private PasswordResponse passwordResponse = new PasswordResponse();
     private string validPassword = string.Empty;
@@ -47,6 +52,8 @@ Introduceti id-ul user-ului si data!
 
     private async Task PasswordGenerate()
     {
+        validPassword = string.Empty;
+        dateTimeValue = 30;
 
         User = new User();
         User.DateTimeUser = DateTimeUser;
@@ -73,7 +80,13 @@ Introduceti id-ul user-ului si data!
         else
         {
             timer.Enabled = false;
-            dateTimeValue = 30;
+            
+            validPassword = string.Empty;
+            dateTimeValue = 0;
+            InvokeAsync(() =>
+                {
+                    StateHasChanged();
+                });
         }       
     }
 
@@ -83,11 +96,11 @@ Introduceti id-ul user-ului si data!
 
         if (isValidPassword > 0)
         {
-            validPassword = "parola valida";
+            validPassword = "parola valida!";
         }
         else
         {
-            validPassword = "parola expirata";
+            validPassword = "parola expirata!";
         }
     }
    

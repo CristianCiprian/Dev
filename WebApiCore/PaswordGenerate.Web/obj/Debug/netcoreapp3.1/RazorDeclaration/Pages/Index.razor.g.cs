@@ -112,14 +112,14 @@ using System.Timers;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 36 "C:\Users\crist\Desktop\Jobs\WebApiCore\PaswordGenerate.Web\Pages\Index.razor"
+#line 41 "C:\Users\crist\Desktop\Jobs\WebApiCore\PaswordGenerate.Web\Pages\Index.razor"
       
     [Parameter] public User User { get; set; }
 
     private string UserId = "";
     private DateTime DateTimeUser = DateTime.Now;
     private Timer timer;
-    private int dateTimeValue = 30;    
+    private int dateTimeValue = 0;    
     private string  password = string.Empty;
     private PasswordResponse passwordResponse = new PasswordResponse();
     private string validPassword = string.Empty;
@@ -127,6 +127,8 @@ using System.Timers;
 
     private async Task PasswordGenerate()
     {
+        validPassword = string.Empty;
+        dateTimeValue = 30;
 
         User = new User();
         User.DateTimeUser = DateTimeUser;
@@ -153,7 +155,13 @@ using System.Timers;
         else
         {
             timer.Enabled = false;
-            dateTimeValue = 30;
+            
+            validPassword = string.Empty;
+            dateTimeValue = 0;
+            InvokeAsync(() =>
+                {
+                    StateHasChanged();
+                });
         }       
     }
 
@@ -163,11 +171,11 @@ using System.Timers;
 
         if (isValidPassword > 0)
         {
-            validPassword = "parola valida";
+            validPassword = "parola valida!";
         }
         else
         {
-            validPassword = "parola expirata";
+            validPassword = "parola expirata!";
         }
     }
    

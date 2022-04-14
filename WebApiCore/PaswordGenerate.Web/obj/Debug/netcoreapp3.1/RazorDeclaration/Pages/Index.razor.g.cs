@@ -112,28 +112,31 @@ using System.Timers;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 41 "C:\Users\crist\Desktop\Jobs\WebApiCore\PaswordGenerate.Web\Pages\Index.razor"
+#line 45 "C:\Users\crist\Desktop\Jobs\WebApiCore\PaswordGenerate.Web\Pages\Index.razor"
       
-    [Parameter] public User User { get; set; }
 
-    private string UserId = "";
-    private DateTime DateTimeUser = DateTime.Now;
     private Timer timer;
     private int dateTimeValue = 0;    
     private string  password = string.Empty;
-    private PasswordResponse passwordResponse = new PasswordResponse();
+    private PasswordResponse passwordResponse; 
     private string validPassword = string.Empty;
     private int isValidPassword;
+    private User user = new User { DateTimeUser = DateTime.Now, UserId=0};
+            
 
+    /// <summary>
+    /// generate password and set timer
+    /// </summary>
+    /// <returns></returns>
     private async Task PasswordGenerate()
     {
         validPassword = string.Empty;
         dateTimeValue = 30;
 
-        User = new User();
-        User.DateTimeUser = DateTimeUser;
-
-        passwordResponse = await _passwordServices.GetPasswordResponses(UserId);
+        passwordResponse= new PasswordResponse();        
+      
+        //passwordResponse = await _passwordServices.GetPasswordResponses(UserId);
+        passwordResponse = await _passwordServices.PasswordGenerate(user);
         password = passwordResponse.Password;
 
         //Timer Countdown
@@ -143,10 +146,15 @@ using System.Timers;
         timer.Enabled = true;
     }
 
-    private void OnTimeElapsed(object? sender, ElapsedEventArgs e)
+    /// <summary>
+    /// show seconds countdown 
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    private void OnTimeElapsed(object sender, ElapsedEventArgs e)
     {
-        if(dateTimeValue>0){  
-            dateTimeValue = dateTimeValue -1;
+        if(dateTimeValue > 0){  
+            dateTimeValue = dateTimeValue - 1;
             InvokeAsync(() =>
                 {
                     StateHasChanged();
@@ -154,8 +162,7 @@ using System.Timers;
         }
         else
         {
-            timer.Enabled = false;
-            
+            timer.Enabled = false;            
             validPassword = string.Empty;
             dateTimeValue = 0;
             InvokeAsync(() =>
@@ -164,7 +171,11 @@ using System.Timers;
                 });
         }       
     }
-
+    
+    /// <summary>
+    /// check if password is expired
+    /// </summary>
+    /// <returns></returns>
     private async Task CheckPassword()
     {   
         isValidPassword =  await _passwordServices.CheckPassword(password);

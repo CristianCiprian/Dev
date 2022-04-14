@@ -6,24 +6,28 @@
 @inject IPasswordServices _passwordServices
 
 <h3>Generare parola</h3>
-
-Introduceti id-ul user-ului si data!
+<EditForm Model="@user">
+ <DataAnnotationsValidator />
+ <ValidationSummary />
+        Introduceti id-ul user-ului si data!
  <hr/>  
         <div class = "form-field">            
-           <EditForm Model="UserId">
+           @*<EditForm Model="UserId">*@
                <label> Id-ul userului: </label>
-                <input class = "form-text" @bind-value="UserId"/>
-            </EditForm>            
+                <input id ="userId" type="number" class = "form-text" @bind-value="user.UserId" />  
+                <ValidationMessage For="() => user.UserId" />
+            @*</EditForm>            *@
         </div>
  <br/> 
          <div class = "form-field">                              
-            <EditForm Model="DateTimeUser">
+            @*<EditForm Model="DateTimeUser">*@
                 <label> Data: </label>  
-                <InputDate class="form-text" @bind-Value="DateTimeUser"></InputDate>
-            </EditForm> 
+                <InputDate id= "dateTimeUser" class="form-text" @bind-Value="user.DateTimeUser"></InputDate>
+            @*</EditForm> *@
         </div>
  <hr/> 
- 
+</EditForm> 
+
   <div class = "form-field">
         <p role="status">Parola generata: @password</p>
         <label> Valabilitate: </label>
@@ -39,26 +43,29 @@ Introduceti id-ul user-ului si data!
     <button class="btn btn-primary" @onclick="CheckPassword">Testeaza parola</button>
 
 @code{
-    [Parameter] public User User { get; set; }
 
-    private string UserId = "";
-    private DateTime DateTimeUser = DateTime.Now;
     private Timer timer;
     private int dateTimeValue = 0;    
     private string  password = string.Empty;
-    private PasswordResponse passwordResponse = new PasswordResponse();
+    private PasswordResponse passwordResponse; 
     private string validPassword = string.Empty;
     private int isValidPassword;
+    private User user = new User { DateTimeUser = DateTime.Now, UserId=0};
+            
 
+    /// <summary>
+    /// generate password and set timer
+    /// </summary>
+    /// <returns></returns>
     private async Task PasswordGenerate()
     {
         validPassword = string.Empty;
         dateTimeValue = 30;
 
-        User = new User();
-        User.DateTimeUser = DateTimeUser;
-
-        passwordResponse = await _passwordServices.GetPasswordResponses(UserId);
+        passwordResponse= new PasswordResponse();        
+      
+        //passwordResponse = await _passwordServices.GetPasswordResponses(UserId);
+        passwordResponse = await _passwordServices.PasswordGenerate(user);
         password = passwordResponse.Password;
 
         //Timer Countdown
@@ -68,10 +75,15 @@ Introduceti id-ul user-ului si data!
         timer.Enabled = true;
     }
 
-    private void OnTimeElapsed(object? sender, ElapsedEventArgs e)
+    /// <summary>
+    /// show seconds countdown 
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    private void OnTimeElapsed(object sender, ElapsedEventArgs e)
     {
-        if(dateTimeValue>0){  
-            dateTimeValue = dateTimeValue -1;
+        if(dateTimeValue > 0){  
+            dateTimeValue = dateTimeValue - 1;
             InvokeAsync(() =>
                 {
                     StateHasChanged();
@@ -79,8 +91,7 @@ Introduceti id-ul user-ului si data!
         }
         else
         {
-            timer.Enabled = false;
-            
+            timer.Enabled = false;            
             validPassword = string.Empty;
             dateTimeValue = 0;
             InvokeAsync(() =>
@@ -89,7 +100,11 @@ Introduceti id-ul user-ului si data!
                 });
         }       
     }
-
+    
+    /// <summary>
+    /// check if password is expired
+    /// </summary>
+    /// <returns></returns>
     private async Task CheckPassword()
     {   
         isValidPassword =  await _passwordServices.CheckPassword(password);

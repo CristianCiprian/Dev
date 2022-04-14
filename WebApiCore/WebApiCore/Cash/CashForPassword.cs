@@ -1,35 +1,35 @@
-﻿using System;
+﻿using PasswordGenerate.DataModels;
+using System;
 using System.Collections.Generic;
-using WebApiCore.Models;
 
-namespace WebApiCore.Cash
+namespace WebApiCore.Cache
 {
-    public sealed class CashForPassword
+    public sealed class CacheForPassword
     {
-        private CashForPassword()
+        private CacheForPassword()
         {
 
         }
 
-        private static CashForPassword instance = null;
-        public static CashForPassword Instance
+        private static CacheForPassword instance = null;
+        public static CacheForPassword Instance
         {
             get
             {
                 if (instance == null)
                 {
-                    instance = new CashForPassword();
+                    instance = new CacheForPassword();
                 }
                 return instance;
             }
         }
 
-        private List<PaswordResponse> paswordResponses = new List<PaswordResponse>(); 
+        private List<PasswordResponse> passwordResponses = new List<PasswordResponse>(); 
 
-        public List<PaswordResponse> PaswordResponses
+        public List<PasswordResponse> PasswordResponses
         {
-            get { return paswordResponses; }
-            set { paswordResponses = value; }
+            get { return passwordResponses; }
+            set { passwordResponses = value; }
         }
     }
 }

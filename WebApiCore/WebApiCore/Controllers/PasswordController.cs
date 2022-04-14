@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Mvc;
+using PaswordGenerate.DataModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -29,6 +30,25 @@ namespace WebApiCore.Controllers
                 var result = await passwordService.GeneratePassword(userId, dateTime);
                 return new ObjectResult(result);
             }         
+            catch (Exception ex)
+            {
+                return CreateUnexpectedErrorResponse(ex);
+            }
+
+        }
+
+        [Route("Password")]
+        [HttpPost]
+        [ProducesResponseType(statusCode: 200, type: typeof(User))]
+        public virtual async Task<IActionResult> PasswordGenerate([FromBody] User user)
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(user.UserId.ToString())) throw new ArgumentNullException();
+
+                var result = await passwordService.GeneratePassword(user.UserId, user.DateTimeUser);
+                return new ObjectResult(result);
+            }
             catch (Exception ex)
             {
                 return CreateUnexpectedErrorResponse(ex);

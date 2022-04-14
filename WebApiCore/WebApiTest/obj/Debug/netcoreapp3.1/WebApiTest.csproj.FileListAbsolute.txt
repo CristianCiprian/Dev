@@ -151,3 +151,7 @@ C:\Users\crist\Desktop\Jobs\WebApiCore\WebApiTest\obj\Debug\netcoreapp3.1\WebApi
 C:\Users\crist\Desktop\Jobs\WebApiCore\WebApiTest\obj\Debug\netcoreapp3.1\WebApiTest.dll
 C:\Users\crist\Desktop\Jobs\WebApiCore\WebApiTest\obj\Debug\netcoreapp3.1\WebApiTest.pdb
 C:\Users\crist\Desktop\Jobs\WebApiCore\WebApiTest\obj\Debug\netcoreapp3.1\WebApiTest.genruntimeconfig.cache
+C:\Users\crist\Desktop\Jobs\WebApiCore\WebApiTest\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Blazor.HttpClient.dll
+C:\Users\crist\Desktop\Jobs\WebApiCore\WebApiTest\bin\Debug\netcoreapp3.1\System.Text.Json.dll
+C:\Users\crist\Desktop\Jobs\WebApiCore\WebApiTest\bin\Debug\netcoreapp3.1\PaswordGenerate.DataModels.dll
+C:\Users\crist\Desktop\Jobs\WebApiCore\WebApiTest\bin\Debug\netcoreapp3.1\PaswordGenerate.DataModels.pdb

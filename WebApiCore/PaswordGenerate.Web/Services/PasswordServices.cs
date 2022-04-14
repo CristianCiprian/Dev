@@ -29,7 +29,7 @@ namespace PaswordGenerate.Web.Services
                 using (var client = new HttpClient()) 
                 {
                     client.BaseAddress = new Uri(this._configuration[API_URI]);
-                    var action = string.Format("API/Password/{0}", userId);
+                    var action = string.Format("api/password/{0}", userId);
                     var response = await client.GetAsync(action);
                     if (response.IsSuccessStatusCode)
                     {
@@ -59,7 +59,7 @@ namespace PaswordGenerate.Web.Services
                 using (var client = new HttpClient())
                 {
                     client.BaseAddress = new Uri(this._configuration[API_URI]);
-                    var action = string.Format("API/Password");
+                    var action = string.Format("api/password/generate");
 
                     var jsonData = JsonConvert.SerializeObject(user, Formatting.None, new JsonSerializerSettings { TypeNameHandling = TypeNameHandling.All });
 
@@ -95,7 +95,7 @@ namespace PaswordGenerate.Web.Services
                 using (var client = new HttpClient())
                 {
                     client.BaseAddress = new Uri(this._configuration[API_URI]);
-                    var action = string.Format("API/Check/{0}", password);
+                    var action = string.Format("api/password/check/{0}", password);
                     var response = await client.GetAsync(action);
                     if (response.IsSuccessStatusCode)
                     {

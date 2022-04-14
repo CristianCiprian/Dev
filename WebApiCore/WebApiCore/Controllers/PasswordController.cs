@@ -11,7 +11,7 @@ using WebApiCore.Framework;
 namespace WebApiCore.Controllers
 {
     [ApiController]
-    [Route("/API")]
+    [Route("api/password")]
     public class PasswordController : BaseController
     {
         private readonly IPasswordService passwordService;
@@ -20,34 +20,34 @@ namespace WebApiCore.Controllers
                 this.passwordService = passwordService;
         }
 
-        [Route("Password/{userId}")]
-        [HttpGet]
-        public virtual async Task<IActionResult> GetPassword(int userId, DateTime dateTime)
-        {
-            try {
-                if (string.IsNullOrEmpty(userId.ToString()) ) throw new ArgumentNullException();
+        //[Route("Password/{userId}")]
+        //[HttpGet]
+        //public virtual async Task<IActionResult> GetPassword(int userId, DateTime dateTime)
+        //{
+        //    try {
+        //        if (string.IsNullOrEmpty(userId.ToString()) ) throw new ArgumentNullException();
                
-                var result = await passwordService.GeneratePassword(userId, dateTime);
-                return new ObjectResult(result);
-            }         
-            catch (Exception ex)
-            {
-                return CreateUnexpectedErrorResponse(ex);
-            }
+        //        var result = await passwordService.GeneratePassword(userId, dateTime);
+        //        return new ObjectResult(result);
+        //    }         
+        //    catch (Exception ex)
+        //    {
+        //        return CreateUnexpectedErrorResponse(ex);
+        //    }
 
-        }
+        //}
 
-        [Route("Password")]
+        [Route("generate")]
         [HttpPost]
         [ProducesResponseType(statusCode: 200, type: typeof(User))]
-        public virtual async Task<IActionResult> PasswordGenerate([FromBody] User user)
+        public virtual async Task<IActionResult> GeneratePassword([FromBody] User user)
         {
             try
             {
-                if (string.IsNullOrEmpty(user.UserId.ToString())) throw new ArgumentNullException();
+                if (user.UserId == 0) throw new ArgumentNullException();
 
                 var result = await passwordService.GeneratePassword(user.UserId, user.DateTimeUser);
-                return new ObjectResult(result);
+                return CreateSuccessResponse(result);
             }
             catch (Exception ex)
             {
@@ -56,7 +56,7 @@ namespace WebApiCore.Controllers
 
         }
 
-        [Route("Check/{password}")]
+        [Route("check/{password}")]
         [HttpGet]
         public virtual async Task<IActionResult> CheckPassword(string password)
         {
@@ -65,7 +65,7 @@ namespace WebApiCore.Controllers
                 if (string.IsNullOrEmpty(password)) throw new ArgumentNullException();
 
                 var result = await passwordService.CheckPassword(password);
-                return new ObjectResult(result);
+                return CreateSuccessResponse(result);
             }
             catch (Exception ex)
             {
@@ -74,7 +74,7 @@ namespace WebApiCore.Controllers
 
         }
 
-        [Route("Welcome")]
+        [Route("welcome")]
         [HttpGet]
         public virtual async Task<IActionResult> GetWelcome()
         {

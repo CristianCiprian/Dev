@@ -5,6 +5,7 @@ using System;
 
 namespace WebApiCore.Controllers {
 
+    [Route("api")]
     public abstract class BaseController : ControllerBase
     {
 
@@ -45,7 +46,7 @@ namespace WebApiCore.Controllers {
         protected IActionResult CreateUnexpectedErrorResponse(Exception ex)
         {
 
-            return new ObjectResult("A intervenit o eroare...") { StatusCode = StatusCodes.Status500InternalServerError };
+            return new ObjectResult("A intervenit o eroare...") { StatusCode = StatusCodes.Status400BadRequest };
 
         }
 

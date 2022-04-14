@@ -8,7 +8,7 @@ namespace WebApiCore.Framework
 {
     public interface  IPasswordService
     {
-        Task<PasswordResponse> GeneratePassword(int UserId, DateTime dateTime);
+        Task<PasswordResponse> GeneratePassword(int userId, DateTime dateTime);      
 
         Task<int> CheckPassword(string password);
     }

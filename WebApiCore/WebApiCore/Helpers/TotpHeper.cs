@@ -5,7 +5,7 @@ using System.Security.Cryptography;
 using System.Threading.Tasks;
 
 namespace WebApiCore.Helpers {
-    public class TotpHeper {
+    public class TotpHelper {
         const long unixEpochTicks = 621355968000000000L;
 
         const long ticksToSeconds = 10000000L;
@@ -16,7 +16,7 @@ namespace WebApiCore.Helpers {
 
         private byte[] key;
 
-        public TotpHeper(byte[] secretKey) {
+        public TotpHelper(byte[] secretKey) {
             key = secretKey;
         }
 

@@ -1,4 +1,5 @@
 ﻿using PasswordGenerate.DataModels;
+using PaswordGenerate.DataModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,34 +15,35 @@ namespace WebApiCore.Services
     public class PasswordService : IPasswordService
     {
         
-        public async Task<PasswordResponse> GeneratePassword(int UserId, DateTime dateTime) {
-            
-            if (dateTime == DateTime.MinValue) {
+        public async Task<PasswordResponse> GeneratePassword(int userId, DateTime dateTime) {
+
+            if (dateTime == DateTime.MinValue)
+            {
                 dateTime = DateTime.Now;
             }
-
-            string oneTimePassword =  dateTime.Day.ToString();
+           
+            string oneTimePassword = dateTime.Day.ToString();
             oneTimePassword += dateTime.Month.ToString();
             oneTimePassword += dateTime.Year.ToString();
             oneTimePassword += dateTime.Hour.ToString();
             oneTimePassword += dateTime.Minute.ToString();
             oneTimePassword += dateTime.Second.ToString();
             oneTimePassword += dateTime.Millisecond.ToString();
-            oneTimePassword += UserId.ToString();            
+            oneTimePassword += dateTime.ToString();            
 
-            PasswordResponse passwordRespons = new PasswordResponse();
+            PasswordResponse passwordResponse = new PasswordResponse();
 
-            var totp = new TotpHeper(Base32EncodingHelper.ToBytes(oneTimePassword));
+            TotpHelper totpHelper = new TotpHelper(Base32EncodingHelper.ToBytes(oneTimePassword));
 
-            passwordRespons.Password = await totp.ComputeTotp();
-            passwordRespons.UserId = UserId;
-            passwordRespons.DateTimePasswordStarted = DateTime.Now;//.ToString("yyyy/MM/dd - HH:mm:ss", System.Globalization.CultureInfo.GetCultureInfo("en-US"));            
-            passwordRespons.DateTimePasswordEnded = DateTime.Now.AddSeconds(30);//.ToString("yyyy/MM/dd - HH:mm:ss", System.Globalization.CultureInfo.GetCultureInfo("en-US"));
+            passwordResponse.Password = await totpHelper.ComputeTotp();
+            passwordResponse.UserId = userId;
+            passwordResponse.DateTimePasswordStarted = DateTime.Now;        
+            passwordResponse.DateTimePasswordEnded = DateTime.Now.AddSeconds(30);
 
             //await savePassword()
-             CacheForPassword.Instance.PasswordResponses.Add(passwordRespons);
+             CacheForPassword.Instance.PasswordResponses.Add(passwordResponse);
                         
-            return passwordRespons;
+            return passwordResponse;
         }
 
         public async Task<int> CheckPassword(string password)

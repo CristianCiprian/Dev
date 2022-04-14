@@ -98,6 +98,11 @@ namespace WebApiCore.Helpers {
                 return value - 23;
             }
 
+            if (value < 48 || value > 122)
+            {
+                return value - 12;
+            }
+
             throw new ArgumentException("Character is not a Base32 character.", "c");
         }
 

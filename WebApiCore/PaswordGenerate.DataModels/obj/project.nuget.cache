@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "qkx/2LRXDgw7BMJuVode2T5R4pDO8YlIT9nlg2UDprSmJlZfSm4mXP4MRUwn+iysJHOs8v91qmvdVwGv6qHH/A==",
+  "dgSpecHash": "UVbr3de7MkQHh5jrWERNkmjwZOXNsRQtG5veLpCPRSnVu1NvhKEIJAyhBXXFpR5M0o8IIKRr01Th28X1MRef2g==",
   "success": true,
-  "projectFilePath": "C:\\Users\\crist\\Desktop\\Jobs\\WebApiCore\\PaswordGenerate.DataModels\\PaswordGenerate.DataModels.csproj",
+  "projectFilePath": "C:\\Users\\crist\\Documents\\GitHub\\Dev\\WebApiCore\\PaswordGenerate.DataModels\\PaswordGenerate.DataModels.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\crist\\.nuget\\packages\\microsoft.aspnetcore.blazor.httpclient\\3.2.0-preview3.20168.3\\microsoft.aspnetcore.blazor.httpclient.3.2.0-preview3.20168.3.nupkg.sha512",
     "C:\\Users\\crist\\.nuget\\packages\\system.text.json\\4.7.1\\system.text.json.4.7.1.nupkg.sha512",

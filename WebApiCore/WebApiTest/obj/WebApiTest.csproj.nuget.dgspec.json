@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\crist\\Desktop\\Jobs\\WebApiCore\\WebApiTest\\WebApiTest.csproj": {}
+    "C:\\Users\\crist\\Documents\\GitHub\\Dev\\WebApiCore\\WebApiTest\\WebApiTest.csproj": {}
   },
   "projects": {
-    "C:\\Users\\crist\\Desktop\\Jobs\\WebApiCore\\PaswordGenerate.DataModels\\PaswordGenerate.DataModels.csproj": {
+    "C:\\Users\\crist\\Documents\\GitHub\\Dev\\WebApiCore\\PaswordGenerate.DataModels\\PaswordGenerate.DataModels.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\crist\\Desktop\\Jobs\\WebApiCore\\PaswordGenerate.DataModels\\PaswordGenerate.DataModels.csproj",
+        "projectUniqueName": "C:\\Users\\crist\\Documents\\GitHub\\Dev\\WebApiCore\\PaswordGenerate.DataModels\\PaswordGenerate.DataModels.csproj",
         "projectName": "PaswordGenerate.DataModels",
-        "projectPath": "C:\\Users\\crist\\Desktop\\Jobs\\WebApiCore\\PaswordGenerate.DataModels\\PaswordGenerate.DataModels.csproj",
+        "projectPath": "C:\\Users\\crist\\Documents\\GitHub\\Dev\\WebApiCore\\PaswordGenerate.DataModels\\PaswordGenerate.DataModels.csproj",
         "packagesPath": "C:\\Users\\crist\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\crist\\Desktop\\Jobs\\WebApiCore\\PaswordGenerate.DataModels\\obj\\",
+        "outputPath": "C:\\Users\\crist\\Documents\\GitHub\\Dev\\WebApiCore\\PaswordGenerate.DataModels\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -74,14 +74,14 @@
         }
       }
     },
-    "C:\\Users\\crist\\Desktop\\Jobs\\WebApiCore\\WebApiCore\\WebApiCore.csproj": {
+    "C:\\Users\\crist\\Documents\\GitHub\\Dev\\WebApiCore\\WebApiCore\\WebApiCore.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\crist\\Desktop\\Jobs\\WebApiCore\\WebApiCore\\WebApiCore.csproj",
+        "projectUniqueName": "C:\\Users\\crist\\Documents\\GitHub\\Dev\\WebApiCore\\WebApiCore\\WebApiCore.csproj",
         "projectName": "WebApiCore",
-        "projectPath": "C:\\Users\\crist\\Desktop\\Jobs\\WebApiCore\\WebApiCore\\WebApiCore.csproj",
+        "projectPath": "C:\\Users\\crist\\Documents\\GitHub\\Dev\\WebApiCore\\WebApiCore\\WebApiCore.csproj",
         "packagesPath": "C:\\Users\\crist\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\crist\\Desktop\\Jobs\\WebApiCore\\WebApiCore\\obj\\",
+        "outputPath": "C:\\Users\\crist\\Documents\\GitHub\\Dev\\WebApiCore\\WebApiCore\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -102,8 +102,8 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "C:\\Users\\crist\\Desktop\\Jobs\\WebApiCore\\PaswordGenerate.DataModels\\PaswordGenerate.DataModels.csproj": {
-                "projectPath": "C:\\Users\\crist\\Desktop\\Jobs\\WebApiCore\\PaswordGenerate.DataModels\\PaswordGenerate.DataModels.csproj"
+              "C:\\Users\\crist\\Documents\\GitHub\\Dev\\WebApiCore\\PaswordGenerate.DataModels\\PaswordGenerate.DataModels.csproj": {
+                "projectPath": "C:\\Users\\crist\\Documents\\GitHub\\Dev\\WebApiCore\\PaswordGenerate.DataModels\\PaswordGenerate.DataModels.csproj"
               }
             }
           }
@@ -187,14 +187,14 @@
         }
       }
     },
-    "C:\\Users\\crist\\Desktop\\Jobs\\WebApiCore\\WebApiTest\\WebApiTest.csproj": {
+    "C:\\Users\\crist\\Documents\\GitHub\\Dev\\WebApiCore\\WebApiTest\\WebApiTest.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\crist\\Desktop\\Jobs\\WebApiCore\\WebApiTest\\WebApiTest.csproj",
+        "projectUniqueName": "C:\\Users\\crist\\Documents\\GitHub\\Dev\\WebApiCore\\WebApiTest\\WebApiTest.csproj",
         "projectName": "WebApiTest",
-        "projectPath": "C:\\Users\\crist\\Desktop\\Jobs\\WebApiCore\\WebApiTest\\WebApiTest.csproj",
+        "projectPath": "C:\\Users\\crist\\Documents\\GitHub\\Dev\\WebApiCore\\WebApiTest\\WebApiTest.csproj",
         "packagesPath": "C:\\Users\\crist\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\crist\\Desktop\\Jobs\\WebApiCore\\WebApiTest\\obj\\",
+        "outputPath": "C:\\Users\\crist\\Documents\\GitHub\\Dev\\WebApiCore\\WebApiTest\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -215,8 +215,8 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "C:\\Users\\crist\\Desktop\\Jobs\\WebApiCore\\WebApiCore\\WebApiCore.csproj": {
-                "projectPath": "C:\\Users\\crist\\Desktop\\Jobs\\WebApiCore\\WebApiCore\\WebApiCore.csproj"
+              "C:\\Users\\crist\\Documents\\GitHub\\Dev\\WebApiCore\\WebApiCore\\WebApiCore.csproj": {
+                "projectPath": "C:\\Users\\crist\\Documents\\GitHub\\Dev\\WebApiCore\\WebApiCore\\WebApiCore.csproj"
               }
             }
           }

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "I95EF/DP2UIbuLpj5Iq6trhwfRwLz6WiLEVqBx6DD+imQSVVXQy2ycu6v+a85DefPR/pAm4alO+DWankzf64ew==",
+  "dgSpecHash": "wd0Z6UgCtNeKjCQpdYyciQsDsERwoh0DLJXujbwnfSTI0+nHaggIYMgVQVJcaXOeI/bWgYu3TVl9w5oJku2o7g==",
   "success": true,
-  "projectFilePath": "C:\\Users\\crist\\Desktop\\Jobs\\WebApiCore\\WebApiTest\\WebApiTest.csproj",
+  "projectFilePath": "C:\\Users\\crist\\Documents\\GitHub\\Dev\\WebApiCore\\WebApiTest\\WebApiTest.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\crist\\.nuget\\packages\\castle.core\\4.4.1\\castle.core.4.4.1.nupkg.sha512",
     "C:\\Users\\crist\\.nuget\\packages\\coverlet.collector\\3.0.2\\coverlet.collector.3.0.2.nupkg.sha512",

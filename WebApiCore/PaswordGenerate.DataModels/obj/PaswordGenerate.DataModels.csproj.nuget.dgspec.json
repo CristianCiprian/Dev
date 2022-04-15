@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\crist\\Desktop\\Jobs\\WebApiCore\\PaswordGenerate.DataModels\\PaswordGenerate.DataModels.csproj": {}
+    "C:\\Users\\crist\\Documents\\GitHub\\Dev\\WebApiCore\\PaswordGenerate.DataModels\\PaswordGenerate.DataModels.csproj": {}
   },
   "projects": {
-    "C:\\Users\\crist\\Desktop\\Jobs\\WebApiCore\\PaswordGenerate.DataModels\\PaswordGenerate.DataModels.csproj": {
+    "C:\\Users\\crist\\Documents\\GitHub\\Dev\\WebApiCore\\PaswordGenerate.DataModels\\PaswordGenerate.DataModels.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\crist\\Desktop\\Jobs\\WebApiCore\\PaswordGenerate.DataModels\\PaswordGenerate.DataModels.csproj",
+        "projectUniqueName": "C:\\Users\\crist\\Documents\\GitHub\\Dev\\WebApiCore\\PaswordGenerate.DataModels\\PaswordGenerate.DataModels.csproj",
         "projectName": "PaswordGenerate.DataModels",
-        "projectPath": "C:\\Users\\crist\\Desktop\\Jobs\\WebApiCore\\PaswordGenerate.DataModels\\PaswordGenerate.DataModels.csproj",
+        "projectPath": "C:\\Users\\crist\\Documents\\GitHub\\Dev\\WebApiCore\\PaswordGenerate.DataModels\\PaswordGenerate.DataModels.csproj",
         "packagesPath": "C:\\Users\\crist\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\crist\\Desktop\\Jobs\\WebApiCore\\PaswordGenerate.DataModels\\obj\\",
+        "outputPath": "C:\\Users\\crist\\Documents\\GitHub\\Dev\\WebApiCore\\PaswordGenerate.DataModels\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

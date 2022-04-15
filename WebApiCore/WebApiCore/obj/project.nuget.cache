@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "4rNOTSMJP6fq0CkXdCJPC3fv2yhKrlUMuRPaZ16GrmgtCsH6PzEKZJpl9NGVfeAR9vV2gThbO+whrBh3KX/Peg==",
+  "dgSpecHash": "e/3lXTMK7/wIGBaRQtm9dBgmk4TyPUhslcur2HmfS+fP1ZRpLpME3NUQncUcRbBbr0y57qvdTx1DMNsctO6mwQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\crist\\Desktop\\Jobs\\WebApiCore\\WebApiCore\\WebApiCore.csproj",
+  "projectFilePath": "C:\\Users\\crist\\Documents\\GitHub\\Dev\\WebApiCore\\WebApiCore\\WebApiCore.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\crist\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\crist\\.nuget\\packages\\microsoft.aspnetcore.blazor.httpclient\\3.2.0-preview3.20168.3\\microsoft.aspnetcore.blazor.httpclient.3.2.0-preview3.20168.3.nupkg.sha512",
